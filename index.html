@@ -394,6 +394,51 @@ footer b { color: var(--hero-ink); display: block; margin-bottom: 4px; font-fami
 </head>
 <body>
 
+<style>
+.thesis { background: var(--hero); color: var(--hero-ink); border-radius: 12px; padding: 22px 26px; font-family: var(--f-display); font-weight: 700; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.35; margin-bottom: 20px; }
+.thesis small { display: block; font-family: var(--f-body); font-weight: 700; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--hero-soft); margin-bottom: 8px; }
+.kf-list { display: grid; gap: 12px; }
+.kf { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr); background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 10px; overflow: hidden; text-decoration: none; color: inherit; }
+.kf:hover { border-color: var(--accent); }
+.kf-main { padding: 18px 20px; display: grid; gap: 6px; align-content: start; }
+.kf-main .lt { font-family: var(--f-display); font-weight: 800; color: var(--accent); font-size: .9rem; }
+.kf-main h3 { font-size: 1.2rem; font-weight: 700; line-height: 1.25; }
+.kf-main p { font-size: .93rem; color: var(--ink-2); }
+.kf-main .src { font-size: .76rem; color: var(--muted); margin-top: 2px; }
+.kf-num { padding: 18px 18px; border-left: 1px solid var(--line); display: grid; gap: 4px; align-content: center; background: color-mix(in srgb, var(--wash) 55%, var(--surface)); }
+.kf-num b { font-family: var(--f-display); font-weight: 800; font-size: 2rem; line-height: 1.05; color: var(--ink); }
+.kf-num span { font-size: .86rem; color: var(--ink-2); line-height: 1.35; }
+.kf-num .tchips { display: grid; gap: 6px; }
+.kf-num .tchips span { font-size: .82rem; }
+.kf-num .tchips b { font-size: .86rem; font-family: var(--f-body); }
+.kf:nth-child(2) { border-left-color: var(--gold); } .kf:nth-child(5) { border-left-color: var(--blue); } .kf:nth-child(6) { border-left-color: var(--green); } .kf:nth-child(7) { border-left-color: var(--gold); }
+.approach { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 14px; }
+.ap { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 10px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.ap:nth-child(2) { border-top-color: var(--green); } .ap:nth-child(3) { border-top-color: var(--gold); } .ap:nth-child(4) { border-top-color: var(--blue); }
+.ap h4 { font-size: 1.02rem; }
+.ap p { font-size: .88rem; color: var(--ink-2); }
+.ap-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+.ap-row > b { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.ap-row span { font-size: .86rem; padding: 6px 11px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+@media (max-width: 900px) { .kf { grid-template-columns: 1fr 1fr; } .kf-main { grid-column: 1 / -1; } .kf-num:first-of-type { border-left: 0; } .kf-num { border-top: 1px solid var(--line); } .approach { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 520px) { .kf { grid-template-columns: 1fr; } .kf-num { border-left: 0; } .approach { grid-template-columns: 1fr; } }
+</style>
+<style>
+.fronts { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)) auto minmax(0,1.2fr); gap:10px; align-items:stretch; margin-bottom:26px; }
+.fr { background:var(--surface); border:1px solid var(--line); border-top:4px solid var(--c,var(--accent)); border-radius:10px; padding:12px 14px; display:grid; gap:2px; align-content:start; }
+.fr b { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.fr span { font-weight:700; font-size:.95rem; }
+.fr-arrow { align-self:center; font-size:1.6rem; color:var(--muted); padding:0 2px; }
+.fr.life { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.kgroup { margin: 22px 0 10px; display:flex; align-items:baseline; gap:10px; border-bottom:2px solid var(--c,var(--accent)); padding-bottom:6px; }
+.kgroup b { font-family:var(--f-display); font-weight:800; font-size:1.25rem; color:var(--c,var(--accent)); }
+.kgroup span { font-family:var(--f-display); font-weight:700; font-size:1.05rem; }
+.thesis { font-size: clamp(1rem, 1.6vw, 1.18rem); font-weight: 600; line-height: 1.5; }
+.kf-list .kf { border-left-color: var(--c,var(--accent)) !important; }
+.kf-list .kf-main .lt { color: var(--c,var(--accent)); }
+@media (max-width: 900px) { .fronts { grid-template-columns: repeat(3, minmax(0,1fr)); } .fr-arrow { grid-column:1/-1; text-align:center; transform:rotate(90deg); } .fr.life { grid-column:1/-1; } }
+@media (max-width: 520px) { .fronts { grid-template-columns: 1fr; } }
+</style>
 <style>.sec-head .scope-note, .scope-note { font-size: .86rem; line-height: 1.5; color: var(--muted); max-width: 72ch; border-left: 3px solid var(--line); padding-left: 12px; margin-top: 4px; } .key .scope-in { display: block; margin-top: 8px; font-family: var(--f-body); font-weight: 400; font-size: .86rem; line-height: 1.5; color: var(--ink-2); }</style>
 <style>.nav a { padding-inline: 8px; } .nav a.lang { margin-left: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; align-self: center; border-bottom-width: 1px; } .nav a.lang:hover { border-color: var(--accent); }</style>
 
@@ -442,17 +487,38 @@ footer b { color: var(--hero-ink); display: block; margin-bottom: 4px; font-fami
 <section id="hallazgos" class="alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="sec-no">Hallazgos principales</p>
-      <h2>Siete mensajes de la línea de base</h2>
+      <p class="sec-no">Resumen</p>
+      <h2>Hallazgos clave del estudio</h2>
     </div>
-    <div class="findings">
-      <a class="find" href="#integrado"><div><div class="stat num">4</div><div class="stat-l">normas regresivas vigentes</div></div><h3>El retroceso en derechos ya ocurrió</h3></a>
-      <a class="find" href="#derechos"><div><div class="stat num">0</div><div class="stat-l">normas abordan a personas LGTBIQ+ migrantes</div></div><h3>Las normas existen, pero están fragmentadas</h3></a>
-      <a class="find" href="#violencia"><div><div class="stat num">62,4 %</div><div class="stat-l">de mujeres trans trabajadoras sexuales fue intervenida por la policía o el serenazgo</div></div><h3>La violencia institucional es el hallazgo más consistente</h3></a>
-      <a class="find" href="#violencia"><div><div class="stat num">67 %</div><div class="stat-l">de los agresores de mujeres cis lesbianas y bisexuales peruanas son familiares</div></div><h3>El daño cambia según el perfil</h3></a>
-      <a class="find" href="#derechos"><div><div class="stat num">2–3 %</div><div class="stat-l">de las mujeres peruanas encuestadas usa PrEP</div></div><h3>Tener seguro no garantiza acceso a la salud</h3></a>
-      <a class="find" href="#comunidad"><div><div class="stat num">12 781</div><div class="stat-l">atenciones al año de las organizaciones, sin fondos públicos</div></div><h3>Las organizaciones comunitarias sostienen la protección</h3></a>
-      <a class="find" href="#territorios"><div><div class="stat num">1 de 23</div><div class="stat-l">propuestas de incidencia política de las organizaciones se implementó, y fue en una municipalidad</div></div><h3>El nivel local es la vía más viable</h3></a>
+    <div class="thesis"><small>Mensaje central</small>Mejorar las condiciones de vida de las mujeres trans, las trabajadoras sexuales y las mujeres migrantes expuestas a la trata exige actuar simultáneamente en tres ámbitos: las normas, las organizaciones comunitarias y el debate público. En el ámbito normativo, los derechos retroceden y persisten brechas entre las garantías formales y su acceso efectivo. En el comunitario, las organizaciones constituyen la principal capacidad instalada para responder a las necesidades de estas poblaciones, pero su continuidad está en riesgo por la falta de recursos. En el debate público, predominan las voces que estigmatizan, mientras las de las propias comunidades permanecen relegadas. El resultado se hace visible en la vida cotidiana, donde las instituciones llamadas a proteger sus derechos también ejercen violencia contra ellas.</div>
+    <div class="fronts"><div class="fr" style="--c:var(--accent)"><b>Ámbito 1</b><span>Normas y políticas públicas</span></div><div class="fr" style="--c:var(--gold)"><b>Ámbito 2</b><span>Organizaciones comunitarias</span></div><div class="fr" style="--c:var(--blue)"><b>Ámbito 3</b><span>Debate público y comunicación</span></div><div class="fr-arrow" aria-hidden="true">→</div><div class="fr life" style="--c:var(--green)"><b>Resultado</b><span>La vida de las mujeres</span></div></div>
+    <div style="--c:var(--accent)">
+    <div class="kgroup"><b>1</b><span>Normas y políticas públicas</span></div>
+    <div class="kf-list">
+      <a class="kf" href="#normativo"><div class="kf-main"><span class="lt">a</span><h3>El retroceso en derechos ya ocurrió</h3><p>Leyes recientes eliminan el enfoque de género, retiran la educación sexual integral y restringen el espacio cívico, sin derogar derechos de forma explícita.</p><span class="src">Fuentes: normas y prensa</span></div><div class="kf-num"><b class="num">7</b><span>hitos de retroceso entre 2016 y 2026</span></div><div class="kf-num"><b class="num">2 de 5</b><span>reacciones lograron revertir medidas, ambas por vía judicial</span></div></a>
+      <a class="kf" href="#normativo"><div class="kf-main"><span class="lt">b</span><h3>La brecha está entre la norma y el acceso efectivo</h3><p>Las obligaciones internacionales no se incorporan de manera efectiva en los marcos nacionales ni locales, y el Estado responde de forma fragmentada a cada población.</p><span class="src">Fuente: normas</span></div><div class="kf-num"><b class="num">93</b><span>normas vigentes, fragmentadas y centradas en el VIH y la TB</span></div><div class="kf-num"><b class="num">0</b><span>normas abordan a las personas LGTBIQ+ migrantes</span></div></a>
+    </div>
+    </div>
+    <div style="--c:var(--gold)">
+    <div class="kgroup"><b>2</b><span>Organizaciones comunitarias</span></div>
+    <div class="kf-list">
+      <a class="kf" href="#organizaciones"><div class="kf-main"><span class="lt">c</span><h3>Son la principal red de protección, pero están en riesgo</h3><p>Sostienen servicios que el Estado no cubre, sin financiamiento estable. Sus mayores debilidades son la gestión financiera y la incidencia.</p><span class="src">Fuente: organizaciones</span></div><div class="kf-num"><b class="num">12 781</b><span>atenciones al año, sin fondos públicos</span></div><div class="kf-num"><b class="num">33 de 49</b><span>representantes no reciben ningún incentivo</span></div></a>
+      <a class="kf" href="#territorios"><div class="kf-main"><span class="lt">d</span><h3>Su incidencia avanza en lo local</h3><p>Las organizaciones se vinculan con el Estado a través de las municipalidades. Cada territorio plantea un desafío distinto.</p><span class="src">Fuentes: organizaciones y normas</span></div><div class="kf-num"><b class="num">1 de 23</b><span>propuestas de incidencia política de las organizaciones se implementó, y fue en una municipalidad</span></div><div class="kf-num"><div class="tchips"><span><b>Lima:</b> desigualdad entre distritos</span><span><b>Callao:</b> alianzas frágiles</span><span><b>Tumbes:</b> trata en zona de tránsito</span></div></div></a>
+    </div>
+    </div>
+    <div style="--c:var(--blue)">
+    <div class="kgroup"><b>3</b><span>Debate público y comunicación</span></div>
+    <div class="kf-list">
+      <a class="kf" href="#narrativas"><div class="kf-main"><span class="lt">e</span><h3>El estigma viene de las autoridades y la voz comunitaria está ausente</h3><p>El retroceso organizado en la prensa proviene sobre todo de autoridades públicas, más que de la línea editorial de los medios. Las propias comunidades casi no hablan por sí mismas.</p><span class="src">Fuente: prensa</span></div><div class="kf-num"><b class="num">6 de 33</b><span>noticias son retroceso organizado, impulsado sobre todo por autoridades</span></div><div class="kf-num"><b class="num">≈ 0</b><span>presencia de voces comunitarias directas en la cobertura</span></div></a>
+    </div>
+    </div>
+    <div style="--c:var(--green)">
+    <div class="kgroup"><b>4</b><span>La vida de las mujeres</span></div>
+    <div class="kf-list">
+      <a class="kf" href="#violencia"><div class="kf-main"><span class="lt">f</span><h3>Las instituciones que deben proteger también agreden</h3><p>La policía es el principal agresor señalado. Insultos, violencia física, extorsión y violencia sexual se repiten; denunciar no se percibe como una salida segura.</p><span class="src">Fuentes: mujeres participantes y organizaciones</span></div><div class="kf-num"><b class="num">62,4 %</b><span>de las mujeres trans trabajadoras sexuales fue intervenida o detenida</span></div><div class="kf-num"><b class="num">1 de 5</b><span>mujeres que vivió violencia la denunció (20,5 %)</span></div></a>
+      <a class="kf" href="#perfiles"><div class="kf-main"><span class="lt">g</span><h3>El trabajo sexual es el eje común de la desigualdad</h3><p>El estigma asociado al trabajo sexual se cruza con la identidad de género, la nacionalidad y la situación migratoria. Las mujeres trans acumulan más desventajas.</p><span class="src">Fuente: mujeres participantes</span></div><div class="kf-num"><b class="num">57,9 %</b><span>de las migrantes que ejercen trabajo sexual fue intervenida por la policía</span></div><div class="kf-num"><b class="num">1,5 %</b><span>de las migrantes que no lo ejercen</span></div></a>
+      <a class="kf" href="#derechos"><div class="kf-main"><span class="lt">h</span><h3>Tener seguro no garantiza acceso a la salud</h3><p>La prevención del VIH casi no llega, y para las migrantes el acceso depende de su situación migratoria.</p><span class="src">Fuentes: mujeres participantes y normas</span></div><div class="kf-num"><b class="num">+84 %</b><span>de las mujeres peruanas tiene seguro de salud</span></div><div class="kf-num"><b class="num">2–3 %</b><span>de ellas usa PrEP</span></div></a>
+    </div>
     </div>
   </div>
 </section>
@@ -944,10 +1010,14 @@ footer b { color: var(--hero-ink); display: block; margin-bottom: 4px; font-fami
       <p class="sec-no">Ficha técnica</p>
       <h2>Cómo se hizo el estudio</h2>
     </div>
+    <div class="block-head" style="margin-bottom:12px"><h3>Enfoques del estudio</h3></div>
+    <div class="approach"><div class="ap"><h4>Interseccionalidad</h4><p>Marco analítico principal. Analiza cómo la identidad de género, la orientación sexual, la nacionalidad, la ocupación y el territorio interactúan y producen desigualdades distintas.</p></div><div class="ap"><h4>Derechos humanos</h4><p>Orienta el análisis y la ética de la investigación: no causar daño, consentimiento informado, confidencialidad y respeto a la autoidentificación.</p></div><div class="ap"><h4>Igualdad de género y diversidad</h4><p>Reconoce el género como sistema de poder y la diversidad sexual y de género de las participantes.</p></div><div class="ap"><h4>Retroceso en igualdad de género</h4><p>Marco de UNRISD y ONU Mujeres sobre la reacción organizada contra la igualdad de género (backlash).</p></div></div>
+    <div class="ap-row"><b>Enfoques complementarios</b><span>Migratorio</span><span>Territorial</span><span>Comunitario</span><span>Intercultural</span><span>Estigma y determinantes estructurales del VIH</span></div>
+    <div class="ap-row" style="margin-bottom:24px"><b>Diseño</b><span>Línea de base multinivel: micro, meso y macro</span><span>Métodos mixtos</span><span>Triangulación de los cuatro estudios</span><span>Reflexividad del equipo</span></div>
     <div class="tech">
       <div class="panel"><h4>Narrativas en los medios</h4><dl><dt>Fuente</dt><dd>El Comercio y La República</dd><dt>Periodo</dt><dd>2023–2026</dd><dt>Muestra</dt><dd>33 noticias codificadas por nivel de alerta, tipo de retroceso y patrón narrativo</dd></dl></div>
       <div class="panel"><h4>Marco político y normativo</h4><dl><dt>Fuente</dt><dd>Instrumentos internacionales, nacionales, sectoriales y subnacionales</dd><dt>Corte</dt><dd>Septiembre de 2026</dd><dt>Muestra</dt><dd>102 instrumentos y 12 hitos de retroceso y reacción (2016–2026)</dd></dl></div>
-      <div class="panel"><h4>Organizaciones de base comunitaria</h4><dl><dt>Instrumento</dt><dd>Encuesta a organizaciones 2026</dd><dt>Cobertura</dt><dd>49 de 70 organizaciones mapeadas; las 25 de CRECE respondieron</dd><dt>Análisis</dt><dd>Índices de capacidad de 1 a 4 y tipología por conglomerados</dd></dl></div>
+      <div class="panel"><h4>Organizaciones de base comunitaria</h4><dl><dt>Instrumento</dt><dd>Encuesta a organizaciones 2026</dd><dt>Cobertura</dt><dd>49 participaron de 70 organizaciones mapeadas</dd><dt>Análisis</dt><dd>Índices de capacidad de 1 a 4 y tipología por conglomerados</dd></dl></div>
       <div class="panel"><h4>Perfiles interseccionales</h4><dl><dt>Instrumento</dt><dd>Encuesta sociodemográfica, virtual y física</dd><dt>Periodo</dt><dd>Junio y julio de 2026</dd><dt>Muestra</dt><dd>506 encuestas válidas de 515. Los resultados comparativos usan 440 personas en seis grupos con base suficiente.</dd><dt>Muestreo</dt><dd>No probabilístico, por redes comunitarias</dd></dl></div>
     </div>
     <p class="key gold">Los resultados describen a las participantes. No se generalizan a toda la población.<span class="scope-in">Este estudio integral de línea de base aborda la población meta del proyecto CRECE, conformada por mujeres trans, mujeres trabajadoras sexuales y mujeres migrantes expuestas a situaciones de trata. Las mujeres lesbianas y bisexuales se incluyeron como grupo de contraste analítico para identificar barreras de acceso a derechos compartidas y específicas, desde un enfoque intercategorial e interseccional, sin constituir población objetivo del proyecto.</span></p>
